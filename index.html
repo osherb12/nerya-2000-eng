@@ -1,1 +1,879 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>נריה הנדסה ובטיחות 2000 | קבלן רשום 40825 | ירושלים</title>
+<meta name="description" content="נריה הנדסה ובטיחות 2000 בע״מ — ניהול פרויקטים, בטיחות, תמ״א 38, פיגומים, קבלן רשום ענף 100 | 35+ שנות ניסיון | ירושלים">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A1628;
+  --gold: #C8963E;
+  --gold-light: #E8B86D;
+  --gold-pale: #F5E8D0;
+  --cream: #FAF7F2;
+  --stone: #E8E2D8;
+  --text: #1A1A2E;
+  --text-light: #5A5A6E;
+  --white: #FFFFFF;
+  --red-alert: #C0392B;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Assistant',sans-serif; background:var(--cream); color:var(--text); direction:rtl; }
 
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; width:100%; z-index:999;
+  background:rgba(10,22,40,0.97); backdrop-filter:blur(8px);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 2rem; height:64px;
+  border-bottom:2px solid var(--gold);
+}
+.nav-logo { display:flex; align-items:center; gap:0.75rem; }
+.nav-logo-text { font-family:'Frank Ruhl Libre',serif; color:var(--gold); font-size:1.15rem; font-weight:700; line-height:1.2; }
+.nav-logo-sub { color:rgba(255,255,255,0.5); font-size:0.7rem; font-weight:300; }
+.nav-links { display:flex; gap:0.25rem; }
+.nav-links a {
+  color:rgba(255,255,255,0.8); text-decoration:none; font-size:0.82rem; font-weight:600;
+  padding:0.4rem 0.7rem; border-radius:4px; transition:all .2s;
+}
+.nav-links a:hover { color:var(--gold); background:rgba(200,150,62,0.1); }
+.nav-cta {
+  background:var(--gold); color:var(--navy); font-weight:700; font-size:0.82rem;
+  padding:0.5rem 1.2rem; border-radius:6px; text-decoration:none; transition:all .2s;
+  white-space:nowrap;
+}
+.nav-cta:hover { background:var(--gold-light); transform:translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height:100vh;
+  background: linear-gradient(155deg, var(--navy) 0%, #162040 40%, #0D1E35 70%, #0A1628 100%);
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; padding:6rem 1.5rem 4rem;
+  position:relative; overflow:hidden;
+}
+.hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse 80% 60% at 50% 60%, rgba(200,150,62,0.07) 0%, transparent 70%);
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  background:rgba(200,150,62,0.12); border:1px solid rgba(200,150,62,0.3);
+  color:var(--gold-light); font-size:0.78rem; font-weight:600; letter-spacing:0.08em;
+  padding:0.35rem 1rem; border-radius:100px; margin-bottom:2rem;
+}
+.hero h1 {
+  font-family:'Frank Ruhl Libre',serif;
+  font-size:clamp(2.8rem, 7vw, 5.5rem);
+  font-weight:900; color:var(--white); line-height:1.05;
+  margin-bottom:0.5rem;
+}
+.hero h1 span { color:var(--gold); }
+.hero-tagline {
+  font-size:clamp(1.1rem,2.5vw,1.6rem); color:rgba(255,255,255,0.55);
+  font-weight:300; margin-bottom:2.5rem; font-family:'Frank Ruhl Libre',serif;
+}
+.hero-stats {
+  display:flex; gap:2.5rem; justify-content:center; flex-wrap:wrap;
+  margin-bottom:3rem;
+}
+.stat { text-align:center; }
+.stat-num {
+  font-family:'Frank Ruhl Libre',serif; font-size:2.8rem; font-weight:900;
+  color:var(--gold); line-height:1;
+}
+.stat-label { color:rgba(255,255,255,0.5); font-size:0.75rem; font-weight:600; letter-spacing:0.06em; margin-top:0.25rem; }
+.hero-ctas { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+.btn-primary {
+  background:var(--gold); color:var(--navy); font-weight:700; font-size:1rem;
+  padding:0.9rem 2rem; border-radius:8px; text-decoration:none; transition:all .25s;
+  display:inline-flex; align-items:center; gap:0.5rem;
+}
+.btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 25px rgba(200,150,62,0.35); }
+.btn-outline {
+  border:2px solid rgba(255,255,255,0.25); color:var(--white); font-weight:600; font-size:1rem;
+  padding:0.9rem 2rem; border-radius:8px; text-decoration:none; transition:all .25s;
+}
+.btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+.hero-scroll {
+  position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+  color:rgba(255,255,255,0.3); font-size:0.75rem; letter-spacing:0.1em;
+  display:flex; flex-direction:column; align-items:center; gap:0.5rem;
+}
+.scroll-line { width:1px; height:40px; background:linear-gradient(to bottom, rgba(200,150,62,0.5), transparent); }
+
+/* ── SECTIONS ── */
+section { padding:5rem 1.5rem; }
+.container { max-width:1100px; margin:0 auto; }
+.section-tag {
+  display:inline-block; background:var(--gold-pale); color:var(--gold);
+  font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;
+  padding:0.3rem 0.9rem; border-radius:100px; margin-bottom:1rem;
+}
+h2 {
+  font-family:'Frank Ruhl Libre',serif; font-size:clamp(2rem,4vw,3rem);
+  font-weight:800; color:var(--navy); line-height:1.15; margin-bottom:1rem;
+}
+.lead { font-size:1.05rem; color:var(--text-light); line-height:1.7; max-width:680px; }
+
+/* ── SERVICES ── */
+.services { background:var(--white); }
+.services-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin-top:3rem;
+}
+.service-card {
+  background:var(--cream); border-radius:12px; padding:2rem;
+  border:1px solid var(--stone); transition:all .25s; position:relative; overflow:hidden;
+}
+.service-card::before {
+  content:''; position:absolute; top:0; right:0; width:4px; height:100%;
+  background:var(--gold); transform:scaleY(0); transition:.25s; transform-origin:bottom;
+}
+.service-card:hover { transform:translateY(-4px); box-shadow:0 12px 35px rgba(10,22,40,0.1); }
+.service-card:hover::before { transform:scaleY(1); }
+.service-icon { font-size:2rem; margin-bottom:1rem; }
+.service-card h3 { font-family:'Frank Ruhl Libre',serif; font-size:1.25rem; color:var(--navy); margin-bottom:0.75rem; }
+.service-card p { font-size:0.9rem; color:var(--text-light); line-height:1.65; }
+.service-card ul { list-style:none; margin-top:0.75rem; }
+.service-card ul li { font-size:0.85rem; color:var(--text-light); padding:0.2rem 0; }
+.service-card ul li::before { content:'✓ '; color:var(--gold); font-weight:700; }
+
+/* ── CERTS STRIP ── */
+.certs-strip { background:var(--navy); padding:3rem 1.5rem; }
+.certs-title { color:rgba(255,255,255,0.5); font-size:0.75rem; letter-spacing:0.12em; font-weight:600; margin-bottom:1.5rem; text-align:center; }
+.certs-grid {
+  display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center; max-width:900px; margin:0 auto;
+}
+.cert-pill {
+  background:rgba(255,255,255,0.06); border:1px solid rgba(200,150,62,0.2);
+  color:rgba(255,255,255,0.85); font-size:0.78rem; font-weight:600;
+  padding:0.4rem 1rem; border-radius:100px;
+}
+.cert-pill.active { background:rgba(200,150,62,0.15); border-color:rgba(200,150,62,0.5); color:var(--gold-light); }
+
+/* ── PROJECTS ── */
+.projects { background:var(--cream); }
+.projects-filter {
+  display:flex; gap:0.5rem; flex-wrap:wrap; margin:2rem 0;
+}
+.filter-btn {
+  background:var(--white); border:1.5px solid var(--stone); color:var(--text-light);
+  font-size:0.82rem; font-weight:600; padding:0.4rem 1rem; border-radius:100px;
+  cursor:pointer; transition:all .2s; font-family:'Assistant',sans-serif;
+}
+.filter-btn.active, .filter-btn:hover { background:var(--navy); border-color:var(--navy); color:var(--white); }
+.projects-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.25rem;
+}
+.project-card {
+  background:var(--white); border-radius:12px; padding:1.5rem;
+  border:1px solid var(--stone); transition:all .2s;
+}
+.project-card:hover { box-shadow:0 8px 25px rgba(10,22,40,0.08); transform:translateY(-2px); }
+.project-tag {
+  display:inline-block; font-size:0.7rem; font-weight:700; letter-spacing:0.08em;
+  padding:0.2rem 0.7rem; border-radius:100px; margin-bottom:0.75rem;
+}
+.tag-execution { background:#FFF3E0; color:#E65100; }
+.tag-management { background:#E8F5E9; color:#2E7D32; }
+.tag-safety { background:#FCE4EC; color:#880E4F; }
+.tag-venture { background:#EDE7F6; color:#4527A0; }
+.tag-training { background:#E3F2FD; color:#0D47A1; }
+.project-card h3 { font-family:'Frank Ruhl Libre',serif; font-size:1.1rem; color:var(--navy); margin-bottom:0.5rem; }
+.project-meta { font-size:0.8rem; color:var(--text-light); margin-top:0.5rem; display:flex; gap:1rem; flex-wrap:wrap; }
+.project-meta span { display:flex; align-items:center; gap:0.3rem; }
+.project-rec { margin-top:0.75rem; font-size:0.78rem; color:#2E7D32; font-weight:600; }
+
+/* ── ABOUT ── */
+.about { background:var(--white); }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-top:3rem; }
+@media(max-width:768px){ .about-grid { grid-template-columns:1fr; gap:2rem; } }
+.about-intro p { font-size:1rem; color:var(--text-light); line-height:1.8; margin-bottom:1rem; }
+.about-highlight {
+  background:linear-gradient(135deg, var(--navy), #1E3A5F);
+  border-radius:12px; padding:2rem; color:var(--white); margin-top:1.5rem;
+}
+.about-highlight .num { font-family:'Frank Ruhl Libre',serif; font-size:3.5rem; font-weight:900; color:var(--gold); }
+.about-highlight p { font-size:0.9rem; color:rgba(255,255,255,0.7); margin-top:0.5rem; }
+.team-cards { display:flex; flex-direction:column; gap:1rem; }
+.team-card {
+  background:var(--cream); border-radius:10px; padding:1.25rem;
+  border:1px solid var(--stone);
+}
+.team-card h4 { font-family:'Frank Ruhl Libre',serif; font-size:1.05rem; color:var(--navy); }
+.team-card .role { font-size:0.78rem; color:var(--gold); font-weight:700; letter-spacing:0.05em; margin:0.2rem 0; }
+.team-card p { font-size:0.82rem; color:var(--text-light); line-height:1.6; }
+
+/* ── TESTIMONIALS ── */
+.testimonials { background:var(--navy); }
+.testimonials h2 { color:var(--white); }
+.testimonials .section-tag { background:rgba(200,150,62,0.15); }
+.testimonials-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.25rem; margin-top:3rem;
+}
+.testimonial-card {
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px; padding:1.75rem; transition:all .2s;
+}
+.testimonial-card:hover { background:rgba(255,255,255,0.07); border-color:rgba(200,150,62,0.2); }
+.testimonial-card blockquote { font-size:0.9rem; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:1.25rem; font-style:italic; }
+.testimonial-author { font-weight:700; color:var(--gold-light); font-size:0.88rem; }
+.testimonial-role { font-size:0.78rem; color:rgba(255,255,255,0.4); margin-top:0.15rem; }
+.rec-badge { display:inline-flex; align-items:center; gap:0.3rem; font-size:0.7rem; color:rgba(255,255,255,0.3); margin-top:0.5rem; }
+
+/* ── VENTURES ── */
+.ventures { background:var(--cream); }
+.ventures-timeline { margin-top:3rem; }
+.timeline-item {
+  display:flex; gap:2rem; padding:1.5rem 0;
+  border-bottom:1px solid var(--stone); align-items:flex-start;
+}
+.timeline-year {
+  font-family:'Frank Ruhl Libre',serif; font-size:1.4rem; font-weight:800;
+  color:var(--gold); min-width:70px; flex-shrink:0;
+}
+.timeline-content h3 { font-family:'Frank Ruhl Libre',serif; font-size:1.05rem; color:var(--navy); margin-bottom:0.3rem; }
+.timeline-content p { font-size:0.85rem; color:var(--text-light); line-height:1.6; }
+.timeline-tag { font-size:0.7rem; font-weight:700; color:var(--gold); letter-spacing:0.06em; margin-top:0.3rem; }
+
+/* ── CONTACT ── */
+.contact { background:var(--white); }
+.contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:4rem; margin-top:3rem; }
+@media(max-width:768px){ .contact-grid { grid-template-columns:1fr; gap:2rem; } }
+.contact-info h3 { font-family:'Frank Ruhl Libre',serif; font-size:1.5rem; color:var(--navy); margin-bottom:1.5rem; }
+.contact-item { display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
+.contact-item-icon { width:40px; height:40px; background:var(--gold-pale); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+.contact-item-text a { color:var(--navy); text-decoration:none; font-weight:600; font-size:0.95rem; }
+.contact-item-text a:hover { color:var(--gold); }
+.contact-item-text small { display:block; color:var(--text-light); font-size:0.78rem; }
+.contact-form { background:var(--cream); border-radius:16px; padding:2rem; border:1px solid var(--stone); }
+.contact-form h3 { font-family:'Frank Ruhl Libre',serif; font-size:1.3rem; color:var(--navy); margin-bottom:1.5rem; }
+.form-group { margin-bottom:1rem; }
+.form-group label { display:block; font-size:0.82rem; font-weight:600; color:var(--text); margin-bottom:0.35rem; }
+.form-group input, .form-group select, .form-group textarea {
+  width:100%; padding:0.75rem 1rem; border:1.5px solid var(--stone);
+  border-radius:8px; font-family:'Assistant',sans-serif; font-size:0.9rem;
+  background:var(--white); color:var(--text); transition:border-color .2s; direction:rtl;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline:none; border-color:var(--gold);
+}
+.form-group textarea { min-height:100px; resize:vertical; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.submit-btn {
+  width:100%; background:var(--navy); color:var(--white); font-weight:700;
+  font-size:1rem; padding:0.9rem; border:none; border-radius:8px; cursor:pointer;
+  font-family:'Assistant',sans-serif; transition:all .2s; margin-top:0.5rem;
+}
+.submit-btn:hover { background:var(--gold); color:var(--navy); }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--navy); border-top:1px solid rgba(200,150,62,0.2);
+  padding:2.5rem 1.5rem; text-align:center;
+}
+.footer-logo { font-family:'Frank Ruhl Libre',serif; color:var(--gold); font-size:1.2rem; font-weight:700; margin-bottom:0.5rem; }
+.footer-details { color:rgba(255,255,255,0.4); font-size:0.78rem; line-height:1.8; }
+.footer-details a { color:rgba(255,255,255,0.5); text-decoration:none; }
+.footer-links { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin:1rem 0; }
+.footer-links a { color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.8rem; transition:color .2s; }
+.footer-links a:hover { color:var(--gold); }
+
+/* ── FLOATING WA ── */
+.wa-float {
+  position:fixed; bottom:1.5rem; left:1.5rem; z-index:998;
+  background:#25D366; color:var(--white); width:56px; height:56px;
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-size:1.5rem; box-shadow:0 4px 15px rgba(37,211,102,0.4);
+  text-decoration:none; transition:all .25s;
+}
+.wa-float:hover { transform:scale(1.1); box-shadow:0 6px 20px rgba(37,211,102,0.5); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .nav-links { display:none; }
+  .hero-stats { gap:1.5rem; }
+  .stat-num { font-size:2.2rem; }
+  .form-row { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div>
+      <div class="nav-logo-text">נריה הנדסה ובטיחות 2000</div>
+      <div class="nav-logo-sub">קבלן רשום 40825 | ענף 100 | BDI עד 04/2027</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#services">שירותים</a>
+    <a href="#projects">פרויקטים</a>
+    <a href="#about">אודות</a>
+    <a href="#testimonials">ממליצים</a>
+    <a href="#ventures">יזמות</a>
+    <a href="#contact">צור קשר</a>
+  </div>
+  <a class="nav-cta" href="tel:0522534888">📞 052-2534888</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-badge">✦ קבלן רשום ענף 100 | BDI CofaceBDI עד 04/2027 ✦</div>
+  <h1>נריה הנדסה<br><span>ובטיחות 2000</span></h1>
+  <p class="hero-tagline">הכל תחת קורת גג אחת</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">35+</div><div class="stat-label">שנות ניסיון</div></div>
+    <div class="stat"><div class="stat-num">100+</div><div class="stat-label">פרויקטים</div></div>
+    <div class="stat"><div class="stat-num">95</div><div class="stat-label">ציון אינטל</div></div>
+    <div class="stat"><div class="stat-num">18+</div><div class="stat-label">ממליצים</div></div>
+  </div>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="#contact">🏗️ קבל הצעת מחיר</a>
+    <a class="btn-outline" href="#projects">הפרויקטים שלנו</a>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>גלול למטה</span></div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+<div class="container">
+  <span class="section-tag">מה אנחנו עושים</span>
+  <h2>שירותים מקצועיים</h2>
+  <p class="lead">חברה מובילה לניהול פרויקטים, בטיחות תעסוקתית, פיגומים ויזמות — ניסיון של 35+ שנה בענף הבנייה.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏗️</div>
+      <h3>קבלן ביצוע ראשי</h3>
+      <p>ביצוע מלא של פרויקטים: שלד, גמר, תמ"א 38, חיזוק קונסטרוקציה.</p>
+      <ul>
+        <li>אחראי לביצוע השלד</li>
+        <li>ניהול קבלני משנה</li>
+        <li>עמידה בלוחות זמנים</li>
+        <li>פרויקטים מאוכלסים</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>ניהול פרויקטים</h3>
+      <p>ניהול מלא מפרוגרמה עד מסירה — תכנון, מכרזים, פיקוח, תיאום יועצים.</p>
+      <ul>
+        <li>מנהל פרויקט + מנהל עבודה</li>
+        <li>לוח זמנים ובקרת תקציב</li>
+        <li>ניהול רשויות ועירייה</li>
+        <li>כתב כמויות + מחירון דקל</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🦺</div>
+      <h3>בטיחות תעסוקתית</h3>
+      <p>שירות ממונה בטיחות חודשי/שנתי, תוכניות ניהול בטיחות, סקרי סיכונים.</p>
+      <ul>
+        <li>ממונה בטיחות — מ.ר 699323</li>
+        <li>תוכנית ניהול בטיחות</li>
+        <li>HAZOP + סקרי סיכונים</li>
+        <li>ייצוג מול משרד העבודה</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎓</div>
+      <h3>הדרכות בטיחות</h3>
+      <p>מרצה מוסמך — שלהבת, אתגר, שב"ס, רכבת ישראל, אינטל (10,000 עובדים).</p>
+      <ul>
+        <li>הדרכות עבודה בגובה</li>
+        <li>הדרכות פיגומים — תקן אירופאי</li>
+        <li>כיבוי אש + חירום</li>
+        <li>קורסים מותאמים ללקוח</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔩</div>
+      <h3>פיגומים מקצועיים</h3>
+      <p>בונה מקצועי לפיגומים — תקן אירופאי חדש, ללא הגבלת תוקף. טפסן סוג 5.</p>
+      <ul>
+        <li>תכנון פיגומים מיוחדים</li>
+        <li>זקפים, זיזי נתמך, אלומיניום</li>
+        <li>הקמה, פירוק, בדיקות יומיות</li>
+        <li>חישובי עומסים + תכנון מבני</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏘️</div>
+      <h3>תמ"א 38 + יזמות</h3>
+      <p>יזמות, ניהול וביצוע פרויקטי תמ"א 38 ופינוי-בינוי. ניסיון בירושלים ובכל הארץ.</p>
+      <ul>
+        <li>ליווי דיירים מא' עד ת'</li>
+        <li>קידום מול ועדות תכנון</li>
+        <li>ניהול יועצים ואדריכלים</li>
+        <li>פינוי-בינוי + שיווק</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CERTS -->
+<section class="certs-strip">
+<div class="certs-title">CERTIFICATIONS & LICENSES — הסמכות רשמיות</div>
+<div class="certs-grid">
+  <span class="cert-pill active">מנהל עבודה | מ.ר 535991</span>
+  <span class="cert-pill active">ממונה בטיחות | מ.ר 699323</span>
+  <span class="cert-pill active">מכין תוכנית בטיחות | מ.ר 763516</span>
+  <span class="cert-pill active">מדריך עבודה בגובה | מ.ר 815470</span>
+  <span class="cert-pill active">בונה מקצועי פיגומים | מ.ר 591807</span>
+  <span class="cert-pill active">עוזר בטיחות | מ.ר 531648</span>
+  <span class="cert-pill active">טפסן סוג 5 | 1208301</span>
+  <span class="cert-pill active">תכנון מבנים | מ.ר 40216835</span>
+  <span class="cert-pill active">ניהול בנייה | מ.ר 34786194</span>
+  <span class="cert-pill">ממונה כיבוי אש</span>
+  <span class="cert-pill">קבלן רשום 40825 ענף 100</span>
+  <span class="cert-pill">BDI CofaceBDI עד 04/2027</span>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+<div class="container">
+  <span class="section-tag">פורטפוליו</span>
+  <h2>פרויקטים נבחרים</h2>
+  <div class="projects-filter">
+    <button class="filter-btn active" onclick="filterProjects('all')">הכל</button>
+    <button class="filter-btn" onclick="filterProjects('execution')">ביצוע</button>
+    <button class="filter-btn" onclick="filterProjects('management')">ניהול</button>
+    <button class="filter-btn" onclick="filterProjects('safety')">בטיחות</button>
+    <button class="filter-btn" onclick="filterProjects('venture')">יזמות</button>
+  </div>
+  <div class="projects-grid" id="projectsGrid">
+
+    <div class="project-card" data-cat="execution">
+      <span class="project-tag tag-execution">ביצוע</span>
+      <h3>עוזיאל 67 — תמ"א 38/1 | בית וגן ירושלים</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">קבלן ביצוע ראשי + ממונה בטיחות | 2,500 מ"ר | 9 יח"ד קיימות + 10 חדשות + ממ"דים + מרפסות + חניה | בניין מאוכלס</p>
+      <div class="project-meta">
+        <span>📅 2023–2025</span>
+        <span>📍 בית וגן, ירושלים</span>
+      </div>
+      <div class="project-rec">✅ המלצה: אבי גולדמן | ארץ עיר</div>
+    </div>
+
+    <div class="project-card" data-cat="execution">
+      <span class="project-tag tag-execution">ביצוע</span>
+      <h3>משמר הגבול 2 — תמ"א 38/1 | רמת אשכול</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">קבלן ביצוע ראשי + אחראי לביצוע השלד | 2,800 מ"ר | 16 יח"ד קיימות + 3 קומות + 11 יח"ד חדשות</p>
+      <div class="project-meta">
+        <span>📅 2024–2025</span>
+        <span>📍 ירושלים</span>
+      </div>
+      <div class="project-rec">✅ המלצה: אבי גולדמן | ארץ עיר</div>
+    </div>
+
+    <div class="project-card" data-cat="management">
+      <span class="project-tag tag-management">ניהול</span>
+      <h3>שרירא גאון 8 — ירושלים</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">מנה"פ + מנה"ע + מהנדס + אחראי שלד | 2026 — פעיל כיום</p>
+      <div class="project-meta">
+        <span>📅 2026 — פעיל</span>
+        <span>📍 ירושלים</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-cat="safety">
+      <span class="project-tag tag-safety">בטיחות</span>
+      <h3>אינטל לכיש — FAB 38 | GIS</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">ממונה בטיחות + מנה"ע | הפרויקט הגדול במזרח התיכון | 10,000 עובדים | הדרכות יומיות</p>
+      <div class="project-meta">
+        <span>📅 2021</span>
+        <span>📍 לכיש</span>
+        <span>⭐ ציון 95</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-cat="management">
+      <span class="project-tag tag-management">ניהול</span>
+      <h3>צור הדסה סנטר</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">אחראי שלד + מנה"ע | אחוזת הגפן + גרין אפל | מהנדס: גאומטריקס</p>
+      <div class="project-meta">
+        <span>📅 2023–2024</span>
+        <span>📍 צור הדסה</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-cat="execution">
+      <span class="project-tag tag-execution">ביצוע</span>
+      <h3>5 גני ילדים — אשקלון</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">אחראי לביצוע השלד + מנה"פ | 5 גנים במקביל | זכיין משכ"ל | שכונות אגמים, ברנע, אפרידר</p>
+      <div class="project-meta">
+        <span>📅 2019–2020</span>
+        <span>📍 אשקלון</span>
+      </div>
+      <div class="project-rec">✅ המלצה: אורי עטר + מצרפי + בורושנסקי</div>
+    </div>
+
+    <div class="project-card" data-cat="management">
+      <span class="project-tag tag-management">ניהול</span>
+      <h3>נצבא החזקות — מבשרת + מלון ירושלים</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">מנה"פ + מנה"ע | שלב א' שלד + שלב ב' | 32,500 ₪/חודש | הסכם חתום</p>
+      <div class="project-meta">
+        <span>📅 2021</span>
+        <span>📍 מבשרת / ירושלים</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-cat="safety">
+      <span class="project-tag tag-safety">בטיחות</span>
+      <h3>אגרוטופ — 8 אתרים בכל הארץ</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">ממונה בטיחות שוטף | 8 אתרי תעשייה | שמואל פיזנטי</p>
+      <div class="project-meta">
+        <span>📅 2020–2025</span>
+        <span>📍 ארצי</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-cat="management">
+      <span class="project-tag tag-management">ניהול</span>
+      <h3>הר ברכה — 24 יח"ד</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">מנהל עבודה | פסגות / ורשבסקי | 2,500 מ"ר</p>
+      <div class="project-meta">
+        <span>📅 2007–2013</span>
+        <span>📍 הר ברכה</span>
+      </div>
+      <div class="project-rec">✅ המלצה: אורן ורשבסקי</div>
+    </div>
+
+    <div class="project-card" data-cat="execution">
+      <span class="project-tag tag-execution">ביצוע</span>
+      <h3>א. עיני — The Village אפרת + ניסים בכר 33</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">מנהל עבודה | שלד בטון + חיזוקים | 1.2.2014–31.5.2015</p>
+      <div class="project-meta">
+        <span>📅 2014–2015</span>
+        <span>📍 אפרת + נחלאות</span>
+      </div>
+      <div class="project-rec">✅ המלצה: א.א עיני | קבלן ג3</div>
+    </div>
+
+    <div class="project-card" data-cat="venture">
+      <span class="project-tag tag-venture">יזמות</span>
+      <h3>עוזיאל 85 — בית וגן ירושלים | תמ"א 38/1</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">יזמות מלאה — גיוס דיירים, תכנון, ניהול רשויות, מכירה לחברת סמל נדל"ן. תמורה: 1,680,000+ ₪</p>
+      <div class="project-meta">
+        <span>📅 2013–2024</span>
+        <span>📍 בית וגן, ירושלים</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-cat="venture">
+      <span class="project-tag tag-venture">יזמות</span>
+      <h3>דרך בית לחם 40 — בקעה ירושלים</h3>
+      <p style="font-size:.85rem;color:var(--text-light);margin-top:.5rem">יזמות + תכנון + ניהול + ביצוע | פנטהאוז 210 מ"ר + 6 יח"ד | 850K$ | כתבת עיתון 1995</p>
+      <div class="project-meta">
+        <span>📅 1993–1995</span>
+        <span>📍 בקעה, ירושלים</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+<div class="container">
+  <span class="section-tag">אודות</span>
+  <h2>נריה הנדסה ובטיחות 2000</h2>
+  <div class="about-grid">
+    <div class="about-intro">
+      <p>נריה הנדסה ובטיחות 2000 בע"מ הוקמה על ידי <strong>נריה צדוק</strong>, יליד 1970 ירושלים, בעל ניסיון של 35+ שנה בתחומי הבנייה והתעשייה על כל מערכותיה ומרכיביה.</p>
+      <p>החברה פועלת באסטרטגיה וניהול שיטתי, ומעניקה שירותי הנדסה, בטיחות תעסוקתית, גהות ואיכות סביבה ברמה הגבוהה ביותר.</p>
+      <p>לרשות לקוחותינו עומד <strong>צוות מקצועי בכיר</strong> הכולל מהנדסים, הנדסאים, מנהלי עבודה, ממוני בטיחות ויועצים מהדרג הראשון בענף.</p>
+      <div class="about-highlight">
+        <div class="num">95</div>
+        <p>ציון שניתן על ידי סמנכ"ל אינטל העולמי עבור ניהול בטיחות ב-FAB 38 לכיש — הפרויקט הגדול במזרח התיכון</p>
+      </div>
+    </div>
+    <div class="team-cards">
+      <div class="team-card">
+        <h4>נריה צדוק</h4>
+        <div class="role">מנכ"ל ובעלים | קבלן רשום 40825</div>
+        <p>תכנון מבנים + ניהול בנייה | ממונה בטיחות | מדריך גובה | בונה פיגומים — תקן אירופאי | מרצה מוסמך. 052-2534888</p>
+      </div>
+      <div class="team-card">
+        <h4>אביה וחניש</h4>
+        <div class="role">מנהל עבודה + מומחה בטיחות</div>
+        <p>High Group (2023–היום) | אחוזת כפיר — תמ"א 38, שימור, מלון | בניין הארץ — חיזוק פלקל, דריכות אחר. קצין מילואים סרן. 055-999-3753</p>
+      </div>
+      <div class="team-card">
+        <h4>שיתוף פעולה — חיים מעתוק ושות'</h4>
+        <div class="role">קבלן ג5 | רישיון 8000 | ח.פ 510900780</div>
+        <p>ביצוע עבודות גדולות בשותפות עם קבלנים מסווגים גוס 5</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+<div class="container">
+  <span class="section-tag">ממליצים</span>
+  <h2>מה אומרים עלינו</h2>
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <blockquote>נריה עבד במקצועיות ובחריצות רבה. פתר בעיות רבות בתחומי איכות הבנייה, ליקויים, חסמים. עבד בתיאום מלא עם המפקחים, הקונסטרוקטור והמתכנן.</blockquote>
+      <div class="testimonial-author">אורון מצרפי</div>
+      <div class="testimonial-role">א.מ מצרפי פיתוח ובנייה בע"מ | קבלן 32845 | אשקלון</div>
+      <div class="rec-badge">✅ מכתב המלצה — 2019, 2020</div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>נריה צדוק עסק בעבודות בניין שלד בטון וחיזוקים בהיקף משרה מלאה, הנייל עבד בעבודות בניה מגובנות והינו בעל ניסיון עשיר ומגוון.</blockquote>
+      <div class="testimonial-author">אברהם עיני — מנהל</div>
+      <div class="testimonial-role">א.א עיני בניין השקעות ופיתוח בע"מ | קבלן ג3 | 13515</div>
+      <div class="rec-badge">✅ מכתב המלצה — 29.2.2016</div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>נריה עבד כמהנדס ביצוע ומנה"פ במקביל בכל האתרים. חתום על הגרמושקות לגנים כאחראי לביצוע השלד. מופיע בכל שלטי המידע באתרים כמהנדס הביצוע.</blockquote>
+      <div class="testimonial-author">אנטולי בורושנסקי</div>
+      <div class="testimonial-role">מהנדס בניין | קונסטרוקטור ופיקוח עליון | רישיון 49311</div>
+      <div class="rec-badge">✅ מכתב המלצה — 18.9.2019</div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>נריה צדוק עסק בעבודות בניין שלד בטון וטפסנות בהיקף משרה מלאה, במהלך תקופה זו הנייל עבד בעבודות בניה מגובנות.</blockquote>
+      <div class="testimonial-author">אורן ורשבסקי</div>
+      <div class="testimonial-role">קבלן רשום 25782 | מהנדס אזרחי 107915 | אורן ורשבסקי הנדסה</div>
+      <div class="rec-badge">✅ מכתב המלצה — 29.2.2016</div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>נריה הוציא דוחות פיקוח, עבד במקצועיות ובחריצות רבה במסגרת הלוז הצפוף, דרישות הפיקוח, העירייה, היועצים ודרישות הרשות.</blockquote>
+      <div class="testimonial-author">אורי עטר</div>
+      <div class="testimonial-role">אורי עטר חברה להנדסה בע"מ | הנדסה ופיקוח אשקלון</div>
+      <div class="rec-badge">✅ מכתב המלצה — 4.9.2019</div>
+    </div>
+
+    <div class="testimonial-card">
+      <blockquote>יורם מעתוק, ניר כהן, אבידן אופיר, אורון מצרפי ועוד 18+ ממליצים מכל תחומי הפעילות — בנייה, בטיחות, הדרכות, פיקוח.</blockquote>
+      <div class="testimonial-author">18+ ממליצים</div>
+      <div class="testimonial-role">קבלנים, מפקחים, יזמים, מהנדסים ורשויות</div>
+      <div class="rec-badge">📞 מכתבי המלצה זמינים לפי דרישה</div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- VENTURES TIMELINE -->
+<section class="ventures" id="ventures">
+<div class="container">
+  <span class="section-tag">יזמות + פרויקטים היסטוריים</span>
+  <h2>35 שנות ניסיון — ציר הזמן</h2>
+  <p class="lead">פעילות יזמית, ניהולית וביצועית עוד לפני הקמת החברה — 1985 ועד היום.</p>
+  <div class="ventures-timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">1993<br>–1995</div>
+      <div class="timeline-content">
+        <h3>דרך בית לחם 40 — בקעה ירושלים</h3>
+        <p>יזמות + תכנון + ניהול + ביצוע | בית ערבי ישן שופץ לפנטהאוז 210 מ"ר + 6 יח"ד | 850,000$ | כתבת עיתון — "פנטקוטג' מציאה"</p>
+        <div class="timeline-tag">🏆 יזמות + ביצוע</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1994<br>–1997</div>
+      <div class="timeline-content">
+        <h3>הולילנד ירושלים — שני בניינים + פנטהאוז</h3>
+        <p>קבלן ביצוע לשאול אברהמי | מנהל עבודה | שני בניינים + פנטהאוז במתחם הולילנד</p>
+        <div class="timeline-tag">🏗️ ביצוע</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1996<br>–1998</div>
+      <div class="timeline-content">
+        <h3>יזמות נחלאות — ניסים בכר 33 + אוהל משה 7+9</h3>
+        <p>ניסים בכר 33 — יזמות + ביצוע עצמי, 6 יח"ד | אוהל משה 7+9 — נמכר לחברת ג'נטרה השקעות (מיכאל בעלים)</p>
+        <div class="timeline-tag">🏆 יזמות</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">~1997</div>
+      <div class="timeline-content">
+        <h3>עלמה 2 + כורזים 16 + עובדיה סומך 6 — נחלאות</h3>
+        <p>עלמה 2: ניהול פרויקט + בטיחות | קבוצת יעדים לישראל | 12 יח"ד שימור | כורזים 16: יזמות + בנייה (ממליץ: בני בבאי)</p>
+        <div class="timeline-tag">📋 ניהול + יזמות</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">~1998<br>–2000</div>
+      <div class="timeline-content">
+        <h3>אליאספור — הר חומה | שותפויות + השקעות</h3>
+        <p>חניון 5,000 מ"ר + 72 יח"ד — קבלן DC | שותפות משה אילון — רכס חלילים (משקיעים מחו"ל) | השקעות טקסס + קליפורניה (עו"ד יואב לוי)</p>
+        <div class="timeline-tag">🌍 ביצוע + השקעות</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2013<br>–2024</div>
+      <div class="timeline-content">
+        <h3>עוזיאל 85 — יזמות תמ"א 38 → מכירה לחברת סמל</h3>
+        <p>שנים של יזמות: גיוס 8 דיירים, תכנון אדריכלי DWG, ניהול מול רשויות, יועצים וקונסטרוקטור | מכירה לסמל נדל"ן בע"מ | תמורה: 1,680,000+ ₪</p>
+        <div class="timeline-tag">🏆 יזמות + מכירה</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2023<br>–2026</div>
+      <div class="timeline-content">
+        <h3>עוזיאל 67 + משמר הגבול 2 — ארץ עיר</h3>
+        <p>קבלן ביצוע ראשי + אחראי שלד | 2 פרויקטי תמ"א 38/1 | המלצה של אבי גולדמן ✅</p>
+        <div class="timeline-tag">🏗️ ביצוע ראשי</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="container">
+  <span class="section-tag">צור קשר</span>
+  <h2>בואו נדבר</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>נריה הנדסה ובטיחות 2000 בע"מ</h3>
+      <div class="contact-item">
+        <div class="contact-item-icon">📞</div>
+        <div class="contact-item-text">
+          <a href="tel:0522534888">052-2534888</a>
+          <small>נריה צדוק — ישיר</small>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">☎️</div>
+        <div class="contact-item-text">
+          <a href="tel:0722127127">072-2127127</a>
+          <small>משרד</small>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">✉️</div>
+        <div class="contact-item-text">
+          <a href="mailto:office@eng2000.co.il">office@eng2000.co.il</a>
+          <small>דוא"ל</small>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-text">
+          <a href="#">אודם 18/41, ירושלים</a>
+          <small>ח.פ 513005587 | קבלן 40825</small>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">💬</div>
+        <div class="contact-item-text">
+          <a href="https://wa.me/972522534888" target="_blank">WhatsApp ישיר</a>
+          <small>מענה מהיר</small>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>השאירו פרטים</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>שם מלא *</label>
+          <input type="text" placeholder="שם מלא" required>
+        </div>
+        <div class="form-group">
+          <label>טלפון *</label>
+          <input type="tel" placeholder="05X-XXXXXXX" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>דוא"ל</label>
+        <input type="email" placeholder="email@example.com">
+      </div>
+      <div class="form-group">
+        <label>תחום עניין</label>
+        <select>
+          <option value="">בחר תחום</option>
+          <option>קבלן ביצוע ראשי</option>
+          <option>ניהול פרויקט</option>
+          <option>ממונה בטיחות</option>
+          <option>הדרכות בטיחות</option>
+          <option>פיגומים מקצועיים</option>
+          <option>תמ"א 38 / יזמות</option>
+          <option>שותפות / השקעות</option>
+          <option>אחר</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>פרטי הפרויקט</label>
+        <textarea placeholder="תאר את הפרויקט / הצורך שלך..."></textarea>
+      </div>
+      <button class="submit-btn" onclick="handleSubmit()">שלח הודעה ✉️</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">נריה הנדסה ובטיחות 2000 בע"מ</div>
+  <div class="footer-links">
+    <a href="#services">שירותים</a>
+    <a href="#projects">פרויקטים</a>
+    <a href="#about">אודות</a>
+    <a href="#testimonials">ממליצים</a>
+    <a href="#ventures">יזמות</a>
+    <a href="#contact">צור קשר</a>
+    <a href="https://eng2000.co.il/wp-admin" target="_blank">ניהול</a>
+  </div>
+  <div class="footer-details">
+    ח.פ 513005587 | קבלן רשום 40825 ענף 100 | BDI CofaceBDI עד 04/2027<br>
+    אודם 18/41 ירושלים | <a href="tel:0522534888">052-2534888</a> | <a href="mailto:office@eng2000.co.il">office@eng2000.co.il</a><br>
+    <a href="https://eng2000.co.il" target="_blank">eng2000.co.il</a> | © 2026 נריה הנדסה ובטיחות 2000 בע"מ
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a class="wa-float" href="https://wa.me/972522534888" target="_blank" title="WhatsApp">💬</a>
+
+<script>
+function filterProjects(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.project-card').forEach(card => {
+    if(cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+function handleSubmit() {
+  const name = document.querySelectorAll('input')[0].value;
+  const phone = document.querySelectorAll('input')[1].value;
+  if(!name || !phone) { alert('נא למלא שם וטלפון'); return; }
+  const msg = `שלום נריה,\nשם: ${name}\nטלפון: ${phone}\nנשלח מהאתר — אנא חזור אליי.`;
+  window.open(`https://wa.me/972522534888?text=${encodeURIComponent(msg)}`,'_blank');
+}
+// Smooth scroll offset for fixed nav
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if(id && id !== '#') {
+      e.preventDefault();
+      const el = document.querySelector(id);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+</script>
+</body>
+</html>
